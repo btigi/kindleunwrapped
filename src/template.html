@@ -1,0 +1,95 @@
+﻿<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{year} Kindle Reading Unwrapped</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        #books {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            row-gap: 50px;
+            padding-bottom: 2rem
+        }   
+
+        .book {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            padding: 1rem;
+            background: #c0c0c0;
+            border-radius: 8px;
+            height: 100%;
+        }
+
+            .book img {
+                max-width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+
+            .book span {
+                margin-top: 0.5rem;
+            }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1e1e1e;
+                color: #f4f4f9;
+            }
+
+            .book {
+                background: #606060;
+            }
+
+            h1 {
+                color: #f4f4f9;
+                text-align: center;
+            }
+
+            .container {
+                background-color: #333;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://www.cssscript.com/demo/tag-word-cloud/src/wordcloud2.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>{year} Kindle Reading Unwrapped</h1>
+
+        <h2>Books</h2>
+        <p>You read {bookcount} books for a total of {readingtime} in {year}</p>
+        <div id="books">
+            {books}
+        </div>
+    </div>
+</body>
+</html>
